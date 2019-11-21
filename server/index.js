@@ -19,6 +19,7 @@ const saveEmail = address => {
   return list.members().create({ address });
 };
 
+app.use(express.static('dist/client'));
 app.use(cors());
 app.use(bodyParser.json()); // for parsing application/json
 app.use(morgan('dev'));
