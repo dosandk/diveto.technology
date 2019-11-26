@@ -148,15 +148,26 @@ function shuffle(a) {
 // 8-12
 // 13-14
 // 15
+
 function checkAnswers (score) {
   if (score <= 7) {
-    return 'Ми віримо, що Ти кльовий рекрутер, але технічна сторона не просить, а вимагає, щоб Ти її прокачав. Курс Dive into Technology в Business Care Academy просто створений для Тебе. Однозначно приходь';
+    return `
+      Ми віримо, що Ти любиш рекрутинг, але технічну сторону варто прокачати. 
+      Курс Dive into Technology в Business Care Academy просто створений для Тебе. Приходь!`;
   } else if (score > 7 && score <= 12) {
-    return 'О, бачимо, що Ти орієнтуєшся в технічних термінах, хоча поки відмінними ці знання важко назвати. Нам точно є що Тобі розказати на курсі Dive into Technology в Business Care Academy. Тут будуть відповіді на всі Твої запитання, реєструйся';
+    return `
+      Ти орієнтуєшся в технічних термінах, але відмінними ці знання не назвеш. 
+      Нам є що Тобі розказати на курсі Dive into Technology в Business Care Academy. 
+      Реєструйся, отримай відповіді на свої запитання`;
   } else if (score > 12 && score <= 14) {
-    return 'Девелопери тебе обожнюють, але систематизація не завадить. Переглянь програму курсу Dive into Technology в Business Care Academy. Будемо раді Тебе там зустріти!';
+    return `
+      Девелопери тебе обожнюють, але систематизувати технічні знання не завадить. 
+      Переглянь програму курсу Dive into Technology в Business Care Academy. 
+      Будемо раді Тебе там зустріти!`;
   } else {
-    return 'Ти мега! Можеш йти до нас викладачем на курс Dive into Technology в Business Care Academy;)';
+    return `
+      Оце рівень - 15 з 15! Можеш йти до нас викладачем на курс 
+      Dive into Technology в Business Care Academy;)`;
   }
 }
 
@@ -326,8 +337,27 @@ document.addEventListener("DOMContentLoaded", () => {
         const $finalDescription = document.getElementById('final-description');
 
         $finalDescription.innerText = checkAnswers(score);
+
+        const $link = getLinkToEvent();
+
+        $finalDescription.appendChild($link);
       }
     };
+
+    // add link to event
+    function getLinkToEvent () {
+      const url = `https://www.facebook.com/events/1217426188456426`;
+      const $div = document.createElement('div');
+      const $link = document.createElement('a');
+
+      $link.href = url;
+      $link.target = '_blank';
+      $link.className = 'event-link';
+      $link.innerText = url;
+
+      $div.appendChild($link);
+      return $div;
+    }
 
     //Functions to swipe left elements on logic external action.
     // false
@@ -879,7 +909,7 @@ document.addEventListener("DOMContentLoaded", () => {
       `;
     };
 
-    shuffle(cards).forEach(card => {
+    shuffle(cards).slice(0, 1).forEach(card => {
       const div = document.createElement('div');
 
       div.innerHTML = getCardTemplate(card);

@@ -337,10 +337,7 @@ h3 {
 .final-state.active {
   position: absolute;
   opacity: 1;
-  /*top: 0;*/
-  /*left: 0;*/
   display: flex;
-  justify-content: center;
   align-items: center;
   flex-direction: column;
   width: 100%;
@@ -348,6 +345,16 @@ h3 {
   transition: all 400ms ease;
   color: white;
   margin-top: 40px;
+}
+
+.event-link,
+.event-link:visited,
+.event-link:active {
+  color: gold;
+}
+
+.event-link:hover {
+  color: #9f8700;
 }
 
 .final-state-inner {
