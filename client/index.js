@@ -909,7 +909,7 @@ document.addEventListener("DOMContentLoaded", () => {
       `;
     };
 
-    shuffle(cards).slice(0, 1).forEach(card => {
+    shuffle(cards).forEach(card => {
       const div = document.createElement('div');
 
       div.innerHTML = getCardTemplate(card);
