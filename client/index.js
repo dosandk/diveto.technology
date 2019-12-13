@@ -152,21 +152,21 @@ function shuffle(a) {
 function checkAnswers (score) {
   if (score <= 7) {
     return `
-      Ми віримо, що Ти любиш рекрутинг, але технічну сторону варто прокачати. 
+      Ми віримо, що Ти любиш рекрутинг, але технічну сторону варто прокачати.
       Курс Dive into Technology в Business Care Academy просто створений для Тебе. Приходь!`;
   } else if (score > 7 && score <= 12) {
     return `
-      Ти орієнтуєшся в технічних термінах, але відмінними ці знання не назвеш. 
-      Нам є що Тобі розказати на курсі Dive into Technology в Business Care Academy. 
+      Ти орієнтуєшся в технічних термінах, але відмінними ці знання не назвеш.
+      Нам є що Тобі розказати на курсі Dive into Technology в Business Care Academy.
       Реєструйся, отримай відповіді на свої запитання`;
   } else if (score > 12 && score <= 14) {
     return `
-      Девелопери тебе обожнюють, але систематизувати технічні знання не завадить. 
-      Переглянь програму курсу Dive into Technology в Business Care Academy. 
+      Девелопери тебе обожнюють, але систематизувати технічні знання не завадить.
+      Переглянь програму курсу Dive into Technology в Business Care Academy.
       Будемо раді Тебе там зустріти!`;
   } else {
     return `
-      Оце рівень - 15 з 15! Можеш йти до нас викладачем на курс 
+      Оце рівень - 15 з 15! Можеш йти до нас викладачем на курс
       Dive into Technology в Business Care Academy;)`;
   }
 }
@@ -350,7 +350,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const $div = document.createElement('div');
       const $link = document.createElement('a');
 
-      $link.href = url;
+      $link.href = 'http://bit.ly/Dive_Into_Technology_2';
       $link.target = '_blank';
       $link.className = 'event-link';
       $link.innerText = url;
@@ -896,13 +896,13 @@ document.addEventListener("DOMContentLoaded", () => {
                 <div class="popular-destinations-text">${data.question}</div>
               </div>
             </div>
-  
+
             <div class="flip-card-back card-answer">
               <h1 class="wrong-answer-title">Упсс, невірно!</h1>
               <p class="wrong-answer-description">
                 ${data.description}
               </p>
-              
+
             </div>
           </div>
         </div>
